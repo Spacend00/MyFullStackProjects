@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="EquaSolve.Application/EquaSolve.Application.csproj" />
+  <Project Path="EquaSolve.Domain/EquaSolve.Domain.csproj" />
+  <Project Path="EquaSolve.Infrastructure/EquaSolve.Infrastructure.csproj" />
+  <Project Path="EquaSolve.WebApp/EquaSolve.WebApp.csproj" />
+</Solution>

@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="PostAppAPI.Application/PostAppAPI.Application.csproj" />
+  <Project Path="PostAppAPI.Domain/PostAppAPI.Domain.csproj" />
+  <Project Path="PostAppAPI.Infrastructure/PostAppAPI.Infrastructure.csproj" />
+  <Project Path="PostAppAPI.WebApp/PostAppAPI.WebApp.csproj" />
+</Solution>
