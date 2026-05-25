@@ -1,0 +1,8 @@
+body{
+    background-image: url('assets/sunset-background.jpg');
+    background-size: cover; /* Resmi ekranı kaplayacak şekilde yayar */
+    background-position: center; /* Resmi ortalar */
+    background-repeat: no-repeat; /* Resmin tekrarlanmasını engeller */
+    background-attachment: fixed; /* İçerik kaysa bile arka plan sabit kalır */
+    min-height: 100vh;
+}

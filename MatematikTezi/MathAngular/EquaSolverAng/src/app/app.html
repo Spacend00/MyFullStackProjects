@@ -1,0 +1,20 @@
+<nav class="navbar backdrop-blur mb-4 pt-5" id="navbar">
+    <div class="container-fluid">
+        <span class="navbar-brand">EquaSolve</span>
+        <ul class="nav justify-content-end">
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" >Anasayfa</a>
+            </li>
+            <li>
+                <a class="nav-link" [routerLink]="['/about']" routerLinkActive="active" >Hakkında</a>
+            </li>
+            <li>
+                <a class="nav-link" [routerLink]="['/examples']" routerLinkActive="active" >Örnekler</a>
+            </li>
+            <li>
+                <a class="nav-link" [routerLink]="['/help']" routerLinkActive="active">Yardım</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<router-outlet></router-outlet>

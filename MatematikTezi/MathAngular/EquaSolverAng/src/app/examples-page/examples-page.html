@@ -1,0 +1,47 @@
+    <div class="container-fluid py-4">
+        <div class="row row-cols-1 row-cols-lg-3 g-3">
+            <div class="col">
+                <div class="card shadow-sm" id="graph">
+                    <div class="m-3">
+                        <span class="form-label">Grafik Denklemleri</span>
+                        <div class="card-body d-flex align-items-center justify-content-center">
+                            <div class="list-group w-100">
+                              @for (item of grafikOrnekleri; track item.eq) {
+                                <button type="button" class="list-group-item list-group-item-action" (click)="grafikSec(item.eq)">
+                                  {{ item.label }} <code class="float-end">{{ item.eq }}</code>
+                                </button>
+                              }
+                            </div>
+                        </div> 
+                    </div>            
+                </div>
+            </div>
+            <div class="col">
+                @if (activeView() === 'graph') {
+                <app-graph-card 
+                    [plots]="plots()" 
+                    [xMin]="-10" [xMax]="10" [yMin]="-10" [yMax]="10">
+                </app-graph-card>
+                } @else {
+                <app-result-card [solveData]="solveResult()" [isLoading]="isSolving()"></app-result-card>
+                }
+            </div>
+            <div class="col">
+                <div class="card shadow-sm " id="result">
+                    <div class="m-3">
+                        <span class="form-label">Sistemler</span>
+                        <div class="list-group mb-4">
+                          @for (item of sistemOrnekleri; track item.eq) {
+                            <button type="button" class="list-group-item list-group-item-action" (click)="sistemSec(item)">
+                              <label for="">{{ item.label }}</label>
+                              @for (eq of item.eq; track eq){
+                                <li class="ms-4"><code>{{ eq }}</code></li>
+                              }
+                            </button>
+                          }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

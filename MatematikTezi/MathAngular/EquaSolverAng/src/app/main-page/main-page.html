@@ -1,0 +1,54 @@
+    <div class="container-fluid py-4">
+        <div class="row row-cols-1 row-cols-lg-3 g-3">
+            <div class="col">
+                <app-graph-card 
+                [plots]="plots()" 
+                [xMin]="xMin()" 
+                [xMax]="xMax()" 
+                [yMin]="yMin()" 
+                [yMax]="yMax()">
+                </app-graph-card>
+            </div>
+            <div class="col">
+                <div class="card border-0 shadow"  id="calculate">
+                    <div class="m-3 mb-1">
+                        <label for="" class="form-label mb-1">Denklemler</label>
+                        <textarea class="form-control active" rows="3" [ngModel]="equationText()" (ngModelChange)="equationText.set($event)"></textarea>
+                    </div>
+                    <div class="m-3 mb-3">
+                        <label class="form-label mb-1" for="">Değişkenler</label>
+                        <input class="form-control" type="text" [ngModel]="variableText()" (ngModelChange)="variableText.set($event)">
+                    </div>
+                    <div class="m-3 mb-3">
+                        <label class="form-label mb-1" for="">Değişken Aralığı</label>
+                        <div class="row gx-1 mb-2">
+                            <div class="col">
+                                <label class="form-label small mb-0" for="">X_min</label>
+                                <input class="form-control" type="text" [value]="xMin()" (input)="sinirDegisti('xMin', $any($event.target).value)">
+                            </div>
+                            <div class="col">
+                                <label class="form-label small mb-0" for="">X_max</label>
+                                <input class="form-control" type="text" [value]="xMax()" (input)="sinirDegisti('xMax', $any($event.target).value)">
+                            </div>
+                        </div>
+                        <div class="row gx-1">
+                            <div class="col">
+                                <label class="form-label small mb-0" for="">Y_min</label>
+                                <input class="form-control" type="text" [value]="yMin()" (input)="sinirDegisti('yMin', $any($event.target).value)">
+                            </div>
+                            <div class="col">
+                                <label class="form-label small mb-0" for="">Y_max</label>
+                                <input class="form-control" type="text" [value]="yMax()" (input)="sinirDegisti('yMax', $any($event.target).value)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="m-3">
+                        <button (click)="solve()" class="btn btn-primary w-100">Hesapla</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <app-result-card [solveData]="solveResult()"></app-result-card>
+            </div>
+        </div>
+    </div>

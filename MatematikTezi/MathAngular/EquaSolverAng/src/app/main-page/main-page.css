@@ -1,0 +1,23 @@
+#calculate{
+    min-height: 500px;
+    background-color: rgba(30, 41, 59, 0.7);
+    border-color: rgba(148, 163, 184, 0.2);   
+}
+ 
+.form-label{
+    color: #e2e8f0;
+}
+
+.form-control{
+    background-color: rgba(30, 41, 59, 0.7);
+    border-color: rgba(148, 163, 184, 0.2); 
+    color: #e2e8f0;
+}
+.form-control.active{
+    border-color: #38bdf8;
+}
+#btn{
+    background-color: rgba(30, 41, 59, 0.7);
+    border-color: rgba(148, 163, 184, 0.2); 
+    color: #e2e8f0;
+}
