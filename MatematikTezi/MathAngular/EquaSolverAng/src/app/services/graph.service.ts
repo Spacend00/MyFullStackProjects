@@ -6,7 +6,7 @@ import { GraphResult } from '../models/graph-result.model';
 @Injectable({ providedIn: 'root' })
 export class GraphService {
   private http = inject(HttpClient);
-  private apiUrl = 'https://localhost:7217/api/graph';
+  private apiUrl = 'http://localhost:5000/api/graph';
 
   analyze(equation: string, variables: string[]) {
     return this.http.post<GraphResult>(this.apiUrl, { equation, variables });
