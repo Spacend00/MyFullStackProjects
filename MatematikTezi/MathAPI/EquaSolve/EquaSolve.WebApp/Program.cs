@@ -49,12 +49,10 @@ app.MapPost("/api/solve", async (IMediator mediator, [FromBody] SolveEquationCom
     {
         var result = await mediator.Send(command);
 
-        // Eğer her şey yolundaysa sonucu dön
         return Results.Ok(result);
     }
     catch (Exception ex)
     {
-        // 🔥 İşte burası sihirli nokta! Serileştirme veya mapping hatasını burada yakalayacağız.
         return Results.Problem(
             detail: ex.ToString(),
             title: "Serileştirme veya Çalışma Zamanı Hatası",

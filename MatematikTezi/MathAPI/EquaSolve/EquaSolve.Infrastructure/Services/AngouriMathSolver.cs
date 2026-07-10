@@ -86,13 +86,11 @@ namespace EquaSolve.Infrastructure.Services
                     {
                         string varName = variables[i];
 
-                        // Liste yoksa oluştur
                         if (!result.VariableValues.ContainsKey(varName))
                         {
                             result.VariableValues[varName] = new List<string>();
                         }
 
-                        // Değeri ekle
                         result.VariableValues[varName].Add(val);
                     }
                 }

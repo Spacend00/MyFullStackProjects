@@ -53,12 +53,11 @@ export class ExamplesPage {
   ];
 
   grafikSec(denklem: string) {
-    // Grafik seçildiğinde eski ortak çözüm sonuçlarını sıfırlıyoruz
     this.activeView.set('graph');
 
     this.graphService.analyze(denklem, ['x', 'y']).subscribe(res => {
       if (res.isValid) {
-        this.plots.set([res]); // Sadece tek bir grafik çizdiriyoruz
+        this.plots.set([res]);
       }
     });
   }
@@ -70,18 +69,16 @@ export class ExamplesPage {
     const equations = ornek.eq
     const variables = ornek.vars.split(',').map(v => v.trim());
 
-    // A) Önce grafik çizim listesini dolduralım (Canlı çizim mantığı gibi)
     const tempPlots: GraphResult[] = [];
     equations.forEach((eq, index) => {
       this.graphService.analyze(eq, variables).subscribe(res => {
         if (res.isValid) {
           tempPlots[index] = res;
-          this.plots.set([...tempPlots]); // Sinyali güncelle, grafik kartı çizsin
+          this.plots.set([...tempPlots]);
         }
       });
     });
 
-    // B) Sonra API'den ortak çözümü ve LaTeX'i isteyelim
     const payload = { equations, variables };
     this.api.solveEquation(payload).subscribe({
       next: (res) => {

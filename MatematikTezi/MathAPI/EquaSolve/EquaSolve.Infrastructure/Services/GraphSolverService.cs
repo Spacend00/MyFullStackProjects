@@ -12,14 +12,10 @@ namespace EquaSolve.Infrastructure.Services
         {
             try
             {
-                // 1. Normalizasyon: "y = x^2" -> "x^2 - y" veya "x^2 + y^2 = 1" -> "x^2 + y^2 - 1"
                 string normalized = MathExpressionHelper.Normalize(equation);
 
-                // 2. Geçerlilik Kontrolü: AngouriMath parse edemezse hata fırlatır
                 Entity expr = normalized;
 
-                // 3. Tip Belirleme: Kaç tane değişken kullanılmış?
-                // Eğer hem x hem y varsa bu bir Implicit (kapalı) denklemdir.
                 bool isImplicit = variables.Count > 1;
 
                 return new GraphResult

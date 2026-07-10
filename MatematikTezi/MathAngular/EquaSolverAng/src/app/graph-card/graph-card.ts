@@ -38,7 +38,6 @@ export class GraphCard {
   private renderAll(results: GraphResult[], element: HTMLElement, limits: { xMin: number, xMax: number, yMin: number, yMax: number}) {
     element.innerHTML = '';
     
-    // function-plot birden fazla denklemi aynı anda alabilir!
     const series = results.map(r => ({
       fn: r.normalizedEquation,
       fnType: r.isImplicit ? 'implicit' : 'linear' as any
@@ -64,7 +63,7 @@ export class GraphCard {
           return `Kordinat: (${x.toFixed(2)}, ${y.toFixed(2)})`;
         }
       },
-      data: series // Diziyi doğrudan veriyoruz
+      data: series
     });
   }
 }
